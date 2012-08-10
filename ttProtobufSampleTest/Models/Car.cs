@@ -15,7 +15,7 @@ namespace ttProtobufSampleTest.Models
     }
 
     [Serializable]
-    [ProtoContract]
+    [ProtoContract(SkipConstructor=true)]
     public class Car : BaseCar
     {
         [ProtoMember(1)]
@@ -29,7 +29,11 @@ namespace ttProtobufSampleTest.Models
         [ProtoMember(4)]
         public CarType Type { get; set; }
 
+        [ProtoMember(5)]
+        public List<Factory> Maintainers { get; set; }
+
         public Car() : base() {
+            //! Need 'SkipConstructor=true'. Otherwise, the deserialized object's Type maybe modified at ctor().
             Random r = new Random();
             this.Type = (CarType)(r.Next(4));
         }

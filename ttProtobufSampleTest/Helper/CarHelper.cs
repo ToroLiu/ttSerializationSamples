@@ -13,6 +13,7 @@ namespace ttProtobufSampleTest
             "Ashe", "Rammus", "Anny", "Ryze",
         };
         private const int _kFriendCount = 10;
+        private const int _kMaintainerCount = 5;
 
         public static Car CreateCar() {
             Car aCar = new Car()
@@ -29,16 +30,27 @@ namespace ttProtobufSampleTest
             };
 
             Random r = new Random();
-            List<Person> f = new List<Person>();
+            List<Person> friendList = new List<Person>();
             for (int i = 0; i < _kFriendCount; ++i) {
                 
                 int idx = r.Next(_name_map.Count());
-                f.Add(new Person { 
+                friendList.Add(new Person { 
                     Id = i+1,
                     Name = _name_map[idx],
                 });
             }
-            aCar.Friends = f.ToArray();
+            aCar.Friends = friendList.ToArray();
+
+            List<Factory> maintainerList = new List<Factory>();
+            for (int i = 0; i < _kMaintainerCount; ++i) {
+                int idx = r.Next(_name_map.Count());
+                maintainerList.Add(new Factory
+                {
+                    Guid = System.Guid.NewGuid(),
+                    Name = _name_map[idx] + "'s Factory.",
+                });
+            }
+            aCar.Maintainers = maintainerList;
 
             return aCar;
         }
