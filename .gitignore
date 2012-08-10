@@ -1,0 +1,48 @@
+# User-specific files
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+
+# Generated/Compiled files/folders 
+[Bb]in
+[Dd]ebug*/
+[Oo]bj/
+*.obj
+*.pdb
+
+# Generated result reports/logs
+[Tt]est[Rr]esult*
+[Bb]uild[Ll]og.*
+[Bb]rail[Gb]en*
+*_log4net.txt
+nhibernate.txt
+
+# ReSharper meta directory
+*_ReSharper*
+*.ReSharper.*
+
+# Windows image file caches
+[Tt]humbs.db
+# Windows folder config file
+[Dd]esktop.ini
+
+# Upgrade Logs
+[Uu]pgradeLog*.[Xx][Mm][Ll]
+_[Uu]pgradeReport_Files*/
+
+# NuGet
+packages/
